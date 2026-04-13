@@ -4,16 +4,17 @@ public class HelloApp {
             // Default message if no names are provided
             System.out.println("Hello, World!");
         } else {
-            // Print the start of the greeting
-            System.out.print("Hello,");
+            String names = "";
             
             // The Enhanced For Loop
             for (String arg : args) {
-                System.out.print(" " + arg);
+                names += arg + " "; // Add the name and a space (the delimiter)
             }
             
-            // Print the exclamation mark and move to a new line
-            System.out.println("!");
+            // Chop off the trailing space using substring
+            names = names.substring(0, names.length() - 1);
+            
+            System.out.println("Hello, " + names + "!");
         }
     }
 }
